@@ -32,7 +32,7 @@ resource "aws_instance" "instance" {
     Name = "${var.component_name}-${var.env}"
   }
 
-  provisioner "local-exec" {
+  provisioner "remote-exec" {
 
     connection {
       type     = "ssh"
