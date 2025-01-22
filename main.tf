@@ -9,7 +9,7 @@ module "db_instances" {
 
 module "app_instances" {
   depends_on     = [module.db_instances]
-  for_each       = var.db_instances
+  for_each       = var.app_instances
   source         = "./modules/ec2"
   env            = var.env
   app_port       = each.value["app_port"]
@@ -19,7 +19,7 @@ module "app_instances" {
 
 module "web_instances" {
   depends_on     = [module.app_instances]
-  for_each       = var.db_instances
+  for_each       = var.web_instances
   source         = "./modules/ec2"
   env            = var.env
   app_port       = each.value["app_port"]
