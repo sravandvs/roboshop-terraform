@@ -1,4 +1,6 @@
 env = "dev"
+domain_name    = "devopsdvs.online"
+zone_id        = "Z09164243MU99FVTOJJQV"
 
 db_instances = {
   mongodb = {
